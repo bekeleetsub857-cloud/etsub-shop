@@ -1,0 +1,12 @@
+/* App.css */
+.App {
+  @apply text-center;
+}
+
+.App-header {
+  @apply flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white;
+}
+
+.App-link {
+  @apply text-blue-400;
+}
