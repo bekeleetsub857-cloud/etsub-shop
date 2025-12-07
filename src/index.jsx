@@ -2,16 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";  // ← Changed to HashRouter
 import { ProductProvider } from "./context/ProductContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ProductProvider>
-      <BrowserRouter basename="/etsub-shop">  {/* ← Change to etsub-shop */}
+      <HashRouter>  {/* ← No basename needed */}
         <App />
-      </BrowserRouter>
+      </HashRouter>
     </ProductProvider>
   </React.StrictMode>
 );
