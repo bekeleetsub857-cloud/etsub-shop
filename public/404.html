@@ -4,27 +4,16 @@
   <meta charset="utf-8">
   <title>Etsub Shop</title>
   <script>
-    // Simple redirect for GitHub Pages SPA
-    const currentPath = window.location.pathname;
-    const repoName = 'etsub-shop';
-    
-    // If we're at the root or a subpath, redirect to HashRouter
-    if (currentPath === `/${repoName}/` || currentPath === `/${repoName}`) {
-      // At repo root - go to app with hash
-      window.location.href = `/${repoName}/index.html#/`;
-    } else if (currentPath.includes(repoName)) {
-      // Already at the app or 404.html
-      // Do nothing - let the React app handle it
-    } else {
-      // Some other path - redirect to repo
-      window.location.href = `/${repoName}/`;
-    }
+    // Simple redirect to the React app
+    const repo = 'etsub-shop';
+    window.location.href = `/${repo}/index.html`;
   </script>
 </head>
 <body>
   <noscript>
     <h1>Etsub Shop</h1>
     <p>Please enable JavaScript to use this application.</p>
+    <p><a href="/etsub-shop/index.html">Click here to go to the app</a></p>
   </noscript>
   <p>Redirecting to Etsub Shop...</p>
 </body>
