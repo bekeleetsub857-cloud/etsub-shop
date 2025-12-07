@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/etsub-shop/static/css/main.91c687ba.css",
-    "main.js": "/etsub-shop/static/js/main.9deb0219.js",
+    "main.js": "/etsub-shop/static/js/main.0e3ea45b.js",
     "index.html": "/etsub-shop/index.html",
     "main.91c687ba.css.map": "/etsub-shop/static/css/main.91c687ba.css.map",
-    "main.9deb0219.js.map": "/etsub-shop/static/js/main.9deb0219.js.map"
+    "main.0e3ea45b.js.map": "/etsub-shop/static/js/main.0e3ea45b.js.map"
   },
   "entrypoints": [
     "static/css/main.91c687ba.css",
-    "static/js/main.9deb0219.js"
+    "static/js/main.0e3ea45b.js"
   ]
 }
