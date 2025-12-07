@@ -1,0 +1,23 @@
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AdminPage from "./pages/AdminPage";
+
+function App() {
+  return (
+    <div>
+      <h1 style={{color: 'red', padding: '20px', border: '2px solid red', textAlign: 'center'}}>
+        ✅ Etsub Shop is Loading!
+      </h1>
+      <nav style={{padding: '10px', background: '#f0f0f0'}}>
+        <a href="#/" style={{marginRight: '10px'}}>Home</a>
+        <a href="#/admin">Admin</a>
+      </nav>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<AdminPage />} />
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
