@@ -17,20 +17,19 @@ jobs:
         with:
           node-version: '18'
 
-      # Debug folder structure
-      - name: Debug folders
+      - name: Debug folder structure
         run: ls -R .
 
-      - name: Install Dependencies
-        working-directory: etsub-shop
+      - name: Install dependencies
+        working-directory: etsub-shop/etsub-shop
         run: npm ci
 
       - name: Build
-        working-directory: etsub-shop
+        working-directory: etsub-shop/etsub-shop
         run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: etsub-shop/build
+          publish_dir: etsub-shop/etsub-shop/build
