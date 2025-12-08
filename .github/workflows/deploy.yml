@@ -14,11 +14,37 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Debug - Show Files
+        run: |
+          echo "=== Current directory structure ==="
+          ls -la
+          echo "=== Checking for package.json ==="
+          if [ -f "package.json" ]; then
+            echo "✓ package.json found"
+            cat package.json | grep -A 5 -B 5 "scripts"
+          else
+            echo "✗ package.json NOT found"
+            echo "Looking in subdirectories..."
+            find . -name "package.json" -type f
+          fi
+
       - name: Install Dependencies
-        run: npm ci
+        run: |
+          if [ -f "package.json" ]; then
+            npm ci
+          else
+            echo "ERROR: No package.json to install from"
+            exit 1
+          fi
 
       - name: Build
-        run: npm run build
+        run: |
+          if [ -f "package.json" ]; then
+            npm run build
+          else
+            echo "ERROR: Cannot build without package.json"
+            exit 1
+          fi
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
