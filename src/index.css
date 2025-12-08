@@ -163,3 +163,128 @@ footer {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
 }
+/* ==================== */
+/* MOBILE OPTIMIZATIONS */
+/* ==================== */
+
+@media (max-width: 768px) {
+  /* Reduce header height */
+  header.bg-gradient-to-r {
+    padding: 0.75rem 1rem !important;
+  }
+  
+  /* Smaller logo on mobile */
+  img.h-16.w-16 {
+    height: 40px !important;
+    width: 40px !important;
+  }
+  
+  /* Smaller site title */
+  .text-3xl.md\:text-4xl {
+    font-size: 1.25rem !important;
+  }
+  
+  /* Reduce carousel height */
+  .h-\[70vh\] {
+    height: 50vh !important;
+  }
+  
+  /* Carousel text adjustments */
+  .text-4xl.md\:text-6xl {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .text-lg.md\:text-xl {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .ml-10.md\:ml-20 {
+    margin-left: 1rem !important;
+    max-width: 85% !important;
+  }
+  
+  /* Larger tap targets */
+  a.inline-block.px-8.py-3,
+  button.px-4.py-2 {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.25rem !important;
+  }
+  
+  /* Stats section - 2 columns */
+  .grid.grid-cols-2.md\:grid-cols-4 {
+    gap: 0.75rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  .text-4xl {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Contact buttons stack vertically */
+  .flex.flex-col.sm\:flex-row.gap-4 {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .flex.flex-col.sm\:flex-row.gap-4 a {
+    width: 90% !important;
+    justify-content: center !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Footer adjustments */
+  footer .grid.grid-cols-1.md\:grid-cols-3 {
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* Section spacing */
+  .py-12, .py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 375px) {
+  /* Single column for stats */
+  .grid.grid-cols-2.md\:grid-cols-4 {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  
+  /* Even smaller carousel text */
+  .text-4xl.md\:text-6xl {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Stack header content */
+  header .flex-col.md\:flex-row {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  
+  header .gap-6 {
+    gap: 1rem !important;
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Prevent text size adjustment on iOS */
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Better touch feedback */
+a, button {
+  transition: all 0.2s ease;
+}
+
+a:active, button:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
