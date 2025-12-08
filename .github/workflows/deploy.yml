@@ -1,35 +1,20 @@
-name: Deploy React App to GitHub Pages
+name: DEBUG PATHS
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build-and-deploy:
+  debug:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Debug folder structure
-        run: ls -R .
-
-      - name: Install dependencies
-        working-directory: etsub-shop/etsub-shop
-        run: npm ci
-
-      - name: Build
-        working-directory: etsub-shop/etsub-shop
-        run: npm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: etsub-shop/etsub-shop/build
+      - name: Show real folders
+        run: |
+          echo "=== ROOT DIRECTORY ==="
+          pwd
+          ls -la
+          echo "=== RECURSIVE LIST ==="
+          ls -R .
