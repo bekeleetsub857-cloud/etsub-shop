@@ -9,289 +9,618 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Body */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #ffffff;
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
-/* Smooth hover for images/videos */
-img, video {
-  transition: transform 0.3s ease;
-}
-img:hover, video:hover {
-  transform: scale(1.05);
-}
-
-/* Footer text spacing */
-footer p {
-  margin: 0.25rem 0;
-}
-
-/* Header */
-header {
-  background: linear-gradient(90deg, #ff4da6, #9933ff, #4da6ff);
-  padding: 20px;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 26px;
-  margin: 0;
-}
-
-header nav a {
-  margin-left: 20px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-/* Hero Banner */
-.hero {
-  padding: 80px 20px;
-  text-align: center;
-  background: linear-gradient(90deg, #ffe3f1, #e6d4ff, #d8ecff);
-}
-
-.hero h2 {
-  font-size: 36px;
-  color: #9933ff;
-  margin-bottom: 10px;
-}
-
-.hero button {
-  padding: 12px 25px;
-  background: linear-gradient(90deg, #ff4da6, #9933ff);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* Product Grid */
-.section-title {
-  text-align: center;
-  font-size: 28px;
-  margin-top: 50px;
-  color: #9933ff;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.product {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  background: #fff;
-}
-
-.product img {
-  width: 100%;
-  border-radius: 10px;
-  cursor: zoom-in;
-}
-
-.badge {
-  display: inline-block;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  margin-top: 5px;
-  color: white;
-}
-
-.onhand { background: #28a745; }
-.byorder { background: #007bff; }
-.sold { background: #dc3545; }
-
-.order-btn {
-  margin-top: 10px;
-  display: block;
-  padding: 8px 10px;
-  background: linear-gradient(90deg, #ff4da6, #9933ff);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-/* Contact Section */
-.contact {
-  padding: 40px;
-  background: #f7f2ff;
-  margin-top: 40px;
-}
-
-.contact h3 {
-  text-align: center;
-  font-size: 28px;
-  color: #9933ff;
-}
-
-.contact p {
-  text-align: center;
-  font-size: 18px;
-}
-
-/* Footer */
-footer {
-  background: #9933ff;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  margin-top: 40px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-.animate-fade-in { animation: fadeIn 1s ease-in; }
-.animate-slide-up { animation: slideUp 0.5s ease-out; }
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-.animate-bounce-slow { animation: bounce 2s infinite; }
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-/* ==================== */
-/* MOBILE OPTIMIZATIONS */
-/* ==================== */
-
-@media (max-width: 768px) {
-  /* Reduce header height */
-  header.bg-gradient-to-r {
-    padding: 0.75rem 1rem !important;
-  }
-  
-  /* Smaller logo on mobile */
-  img.h-16.w-16 {
-    height: 40px !important;
-    width: 40px !important;
-  }
-  
-  /* Smaller site title */
-  .text-3xl.md\:text-4xl {
-    font-size: 1.25rem !important;
-  }
-  
-  /* Reduce carousel height */
-  .h-\[70vh\] {
-    height: 50vh !important;
-  }
-  
-  /* Carousel text adjustments */
-  .text-4xl.md\:text-6xl {
-    font-size: 1.75rem !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  .text-lg.md\:text-xl {
-    font-size: 0.9rem !important;
-    margin-bottom: 0.75rem !important;
-  }
-  
-  .ml-10.md\:ml-20 {
-    margin-left: 1rem !important;
-    max-width: 85% !important;
-  }
-  
-  /* Larger tap targets */
-  a.inline-block.px-8.py-3,
-  button.px-4.py-2 {
-    min-height: 44px;
-    min-width: 44px;
-    padding: 0.75rem 1.25rem !important;
-  }
-  
-  /* Stats section - 2 columns */
-  .grid.grid-cols-2.md\:grid-cols-4 {
-    gap: 0.75rem !important;
-    padding: 0 1rem !important;
-  }
-  
-  .text-4xl {
-    font-size: 1.5rem !important;
-  }
-  
-  /* Contact buttons stack vertically */
-  .flex.flex-col.sm\:flex-row.gap-4 {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-  
-  .flex.flex-col.sm\:flex-row.gap-4 a {
-    width: 90% !important;
-    justify-content: center !important;
-    margin-bottom: 0.5rem !important;
-  }
-  
-  /* Footer adjustments */
-  footer .grid.grid-cols-1.md\:grid-cols-3 {
-    gap: 1.5rem !important;
-    padding: 0 1rem !important;
-  }
-  
-  /* Section spacing */
-  .py-12, .py-16 {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-}
-
-/* Extra small phones */
-@media (max-width: 375px) {
-  /* Single column for stats */
-  .grid.grid-cols-2.md\:grid-cols-4 {
-    grid-template-columns: 1fr !important;
-    text-align: center;
-  }
-  
-  /* Even smaller carousel text */
-  .text-4xl.md\:text-6xl {
-    font-size: 1.5rem !important;
-  }
-  
-  /* Stack header content */
-  header .flex-col.md\:flex-row {
-    flex-direction: column !important;
-    text-align: center !important;
-  }
-  
-  header .gap-6 {
-    gap: 1rem !important;
-    margin-top: 0.5rem !important;
-  }
-}
-
-/* Prevent text size adjustment on iOS */
-body {
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
-/* Better touch feedback */
-a, button {
+body {
+  background-color: #ffffff;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  isolation: isolate;
+  position: relative;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+   Z-INDEX SYSTEM (FIXED LAYERING)
+   ============================================ */
+/* Level 1: Background elements */
+.z-bg { z-index: 1; }
+
+/* Level 10: Content */
+.z-content { z-index: 10; }
+
+/* Level 20: Carousel controls & overlays */
+.z-carousel-controls { z-index: 20; }
+
+/* Level 30: Dropdowns, popovers */
+.z-dropdown { z-index: 30; }
+
+/* Level 40: Headers, fixed navigation */
+.z-header { 
+  z-index: 40 !important; 
+  position: relative !important;
+}
+
+/* Level 50: Modals, sidebars */
+.z-modal { z-index: 50; }
+
+/* Level 100: Mobile menu (MUST be highest) */
+.z-mobile-menu { 
+  z-index: 100 !important; 
+  position: fixed !important;
+}
+
+/* ============================================
+   REACT RESPONSIVE CAROUSEL FIXES
+   ============================================ */
+/* Remove conflicting styles and let library handle its own styles */
+.react-responsive-carousel .carousel .control-dots {
+  z-index: 20 !important;
+  bottom: 40px !important;
+}
+
+.react-responsive-carousel .carousel .control-dots .dot {
+  background: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: none !important;
+  width: 10px !important;
+  height: 10px !important;
+  margin: 0 4px !important;
+  transition: all 0.3s ease !important;
+}
+
+.react-responsive-carousel .carousel .control-dots .dot.selected {
+  background: white !important;
+  width: 30px !important;
+  border-radius: 5px !important;
+}
+
+.react-responsive-carousel .control-arrow {
+  background: rgba(255, 255, 255, 0.8) !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0.8 !important;
+  transition: all 0.3s ease !important;
+}
+
+.react-responsive-carousel .control-arrow:hover {
+  background: white !important;
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+}
+
+.react-responsive-carousel .control-prev {
+  left: 20px !important;
+}
+
+.react-responsive-carousel .control-next {
+  right: 20px !important;
+}
+
+/* ============================================
+   HEADER & NAVIGATION FIXES
+   ============================================ */
+/* Header base */
+.header-container {
+  position: relative !important;
+  z-index: 40 !important;
+  width: 100% !important;
+  background: white !important;
+}
+
+/* ============================================
+   IMAGE HANDLING
+   ============================================ */
+img {
+  image-rendering: auto;
+  -webkit-user-drag: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Product images */
+.product-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: #f9fafb;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.container-wide {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-wide {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-wide {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Layout */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Spacing helpers */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* ============================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ============================================ */
+button, 
+a, 
+[role="button"] {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active, 
+a:active, 
+[role="button"]:active {
+  transform: scale(0.98);
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: #111827;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   transition: all 0.2s ease;
 }
 
-a:active, button:active {
-  transform: scale(0.98);
-  opacity: 0.9;
+.btn-primary:hover {
+  background-color: #1f2937;
+  transform: translateY(-1px);
 }
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary button */
+.btn-secondary {
+  background-color: white;
+  color: #111827;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #d1d5db;
+  background-color: #f9fafb;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* ============================================
+   PRODUCT CARD STYLES
+   ============================================ */
+.product-card {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid #f3f4f6;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  border-color: #e5e7eb;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-4px);
+}
+
+.product-card-image {
+  position: relative;
+  overflow: hidden;
+  background-color: #f9fafb;
+}
+
+.product-card-image img {
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-card-image img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   GRID LAYOUTS
+   ============================================ */
+.grid-products {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 640px) {
+  .grid-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus-visible:focus {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+.focus-visible:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f4f6;
+  border-top-color: #111827;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Optional)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-support {
+    background-color: #111827;
+    color: #f9fafb;
+  }
+  
+  .dark-mode-support h1,
+  .dark-mode-support h2,
+  .dark-mode-support h3,
+  .dark-mode-support h4,
+  .dark-mode-support h5,
+  .dark-mode-support h6 {
+    color: #f9fafb;
+  }
+  
+  .dark-mode-support p {
+    color: #d1d5db;
+  }
+}
+/* ============================================
+   PORTRAIT IMAGE CAROUSEL FIXES
+   ============================================ */
+
+/* Ensure proper image positioning */
+.carousel-portrait-image {
+  object-position: top center !important;
+}
+
+@media (min-width: 768px) {
+  .carousel-portrait-image {
+    object-position: center 15% !important;
+  }
+}
+
+/* For fashion7 (landscape image) */
+.carousel-image-f7 {
+  object-position: center center !important;
+}
+
+/* ============================================
+   OBJECT POSITION FIXES
+   ============================================ */
+
+/* Apply object-position with !important to override inline styles */
+.react-responsive-carousel .slide img {
+  object-position: top center !important;
+}
+
+@media (min-width: 768px) {
+  .react-responsive-carousel .slide img {
+    object-position: center 15% !important;
+  }
+}
+
+/* Individual image adjustments if needed */
+.react-responsive-carousel .slide:nth-child(1) img {
+  object-position: top center !important;
+}
+
+@media (min-width: 768px) {
+  .react-responsive-carousel .slide:nth-child(1) img {
+    object-position: center 15% !important;
+  }
+}
+
+/* And so on for other images if needed */
