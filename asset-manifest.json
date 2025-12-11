@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/etsub-shop/static/css/main.397daf6b.css",
-    "main.js": "/etsub-shop/static/js/main.c5f5e6b8.js",
+    "main.css": "/etsub-shop/static/css/main.f022fa5f.css",
+    "main.js": "/etsub-shop/static/js/main.34acbc8b.js",
+    "static/media/logo512.png": "/etsub-shop/static/media/logo512.ecf3df1045e541057a35.png",
+    "static/media/logo192.png": "/etsub-shop/static/media/logo192.4078e3442f0511214885.png",
     "index.html": "/etsub-shop/index.html",
-    "main.397daf6b.css.map": "/etsub-shop/static/css/main.397daf6b.css.map",
-    "main.c5f5e6b8.js.map": "/etsub-shop/static/js/main.c5f5e6b8.js.map"
+    "main.f022fa5f.css.map": "/etsub-shop/static/css/main.f022fa5f.css.map",
+    "main.34acbc8b.js.map": "/etsub-shop/static/js/main.34acbc8b.js.map"
   },
   "entrypoints": [
-    "static/css/main.397daf6b.css",
-    "static/js/main.c5f5e6b8.js"
+    "static/css/main.f022fa5f.css",
+    "static/js/main.34acbc8b.js"
   ]
 }
